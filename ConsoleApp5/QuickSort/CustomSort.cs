@@ -40,9 +40,9 @@ namespace ConsoleApp5.QuickSort
                     product[j] = temp1;
                 }
             }
-            Product temp = product[i + 1];
-            product[i + 1] = product[high-1];
-            product[high-1] = temp;
+            //Product temp = product[i + 1];
+            //product[i + 1] = product[high-1];
+            //product[high-1] = temp;
 
 
 

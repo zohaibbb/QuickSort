@@ -32,7 +32,7 @@ namespace ConsoleApp5.Helper
 
 
 
-                Console.Write(product[0].Name);
+                
 
             }
             return product;
