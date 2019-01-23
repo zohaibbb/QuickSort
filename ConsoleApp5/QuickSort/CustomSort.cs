@@ -7,15 +7,15 @@ namespace ConsoleApp5.QuickSort
 {
     class CustomSort
     {
-        public IList<Product> quickSort(IList<Product> product, int low, int high)
+        public IList<Product> quickSort(IList<Product> product, string low, string high)
 
         {
 
-            if (low < high)
+            if (string.Compare(low,high)<0)
             {
                 string pivot = partition(product, low, high);
 
-                quickSort(product, low,)
+             
 
             }
 
@@ -26,28 +26,28 @@ namespace ConsoleApp5.QuickSort
 
             return product;
         }
-        public string partition(IList<Product> product, int low, int high)
+        public string partition(IList<Product> product, string low, string high)
         {
 
-            string pivot = product[high - 1].Name;
+            string pivot = high;
             int i = low - 1;
             for (int j = low; j <= high - 1; j++)
             {
                 if (string.Compare(product[j].Name, pivot) <= 0)
                 {
                     i++;
-                    Product temp1 = product[j];
-                    product[j] = product[i];
-                    product[i] = temp1;
+                    Product temp1 = product[i];
+                    product[i] = product[j];
+                    product[j] = temp1;
                 }
             }
             Product temp = product[i + 1];
-            product[i + 1] = product[high];
-            product[high] = temp;
+            product[i + 1] = product[high-1];
+            product[high-1] = temp;
 
 
 
-            return "";
+            return (product[i+1].Name);
         }
 
     }
