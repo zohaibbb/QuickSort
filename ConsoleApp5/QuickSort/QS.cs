@@ -7,47 +7,7 @@ namespace ConsoleApp5.QuickSort
 {
     class QS
     {
-        //public static void quickSort(int[] A, int left, int right)
-        //{
-        //    if (left > right || left < 0 || right < 0) return;
-
-        //    int index = partition(A, left, right);
-
-        //    if (index != -1)
-        //    {
-        //        quickSort(A, left, index - 1);
-        //        quickSort(A, index + 1, right);
-        //    }
-        //}
-
-        //private static int partition(int[] A, int left, int right)
-        //{
-        //    if (left > right) return -1;
-
-        //    int end = left;
-
-        //    int pivot = A[right];    // choose last one to pivot, easy to code
-        //    for (int i = left; i < right; i++)
-        //    {
-        //        if (A[i] < pivot)
-        //        {
-        //            swap(A, i, end);
-        //            end++;
-        //        }
-        //    }
-
-        //    swap(A, end, right);
-
-        //    return end;
-        //}
-
-        //private static void swap(int[] A, int left, int right)
-        //{
-        //    int tmp = A[left];
-        //    A[left] = A[right];
-        //    A[right] = tmp;
-        //}
-
+        
         /* This function takes last element as pivot, 
     places the pivot element at its correct 
     position in sorted array, and places all 
@@ -68,14 +28,14 @@ namespace ConsoleApp5.QuickSort
                 {
                     i++;
 
-                    // swap arr[i] and arr[j] 
+                    // swap product[i] and product[j] 
                     var temp = product[i];
                     product[i] = product[j];
                     product[j] = temp;
                 }
             }
 
-            // swap arr[i+1] and arr[high] (or pivot) 
+            // swap product[i+1] and product[high] (or pivot) 
             var temp1 = product[i + 1];
             product[i + 1] = product[high];
             product[high] = temp1;
@@ -85,7 +45,7 @@ namespace ConsoleApp5.QuickSort
 
 
         /* The main function that implements QuickSort() 
-        arr[] --> Array to be sorted, 
+        product[] --> List to be sorted, 
         low --> Starting index, 
         high --> Ending index */
         public static void QuickSort(IList<Product> product, int low, int high)
@@ -93,7 +53,7 @@ namespace ConsoleApp5.QuickSort
             if (low < high)
             {
 
-                /* pi is partitioning index, arr[pi] is  
+                /* pi is partitioning index, product[pi] is  
                 now at right place */
                 int pi = Partition(product, low, high);
 
