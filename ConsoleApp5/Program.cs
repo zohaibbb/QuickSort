@@ -12,24 +12,24 @@ namespace ConsoleApp5
         {
             DataFromAPI da = new DataFromAPI();
             IList<Product> product= da.getProduct();
-
-            Console.Write(product[0].Name+"\n");
-            Console.Write(product[1].Name+"\n");
-            Console.Write(product[2].Name+"\n");
-            Console.Write(product[3].Name+"\n");
-            Console.Write(product[4].Name+"\n");
+            for (int i =0;i<product.Count;i++)
+                Console.Write(product[i].Name+"\n");
+            
 
 
 
-            CustomSort cs = new CustomSort();
-            IList<Product> p = cs.quickSort(product, 0, product.Count);
-            Console.WriteLine("\n\n\n after sorting");
-            Console.Write(product[0].Name + "\n");
-            Console.Write(product[1].Name + "\n");
-            Console.Write(product[2].Name + "\n");
-            Console.Write(product[3].Name + "\n");
-            Console.Write(product[4].Name + "\n");
+           
+           QS.QuickSort(product, 0, product.Count-1);
+            Console.WriteLine("\nAfter sorting");
+            for (int i = 0; i < product.Count; i++)
+                Console.Write(product[i].Name + "\n");
+
+
+
+
+           
             Console.ReadLine();
+         
         }
     }
 }

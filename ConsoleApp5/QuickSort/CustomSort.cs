@@ -32,7 +32,7 @@ namespace ConsoleApp5.QuickSort
             int i = low - 1;
             for (int j = low; j <= high - 1; j++)
             {
-                if (string.Compare(product[j].Name, product[pivot].Name) <= 0)
+                if (string.Compare(product[j].Name, product[pivot].Name) > 0)
                 {
                     i++;
                     Product temp1 = product[i];
